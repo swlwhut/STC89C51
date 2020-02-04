@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"FANGBO.obj" 
+TO "FANGBO" 
+RAMSIZE(256) 

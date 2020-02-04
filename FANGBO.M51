@@ -1,0 +1,341 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/01/2020  17:32:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+G:\KEIL4\KEIL 4 FOR C51\KEIL 开发软件\KEIL 4\C51\BIN\BL51.EXE STARTUP.obj, FANGBO.obj TO FANGBO RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  FANGBO.obj (FANGBO)
+  G:\KEIL4\KEIL 4 FOR C51\KEIL 开发软件\KEIL 4\C51\LIB\C51S.LIB (?C_INIT)
+  G:\KEIL4\KEIL 4 FOR C51\KEIL 开发软件\KEIL 4\C51\LIB\C51S.LIB (?C?LMUL)
+  G:\KEIL4\KEIL 4 FOR C51\KEIL 开发软件\KEIL 4\C51\LIB\C51S.LIB (?C?ULDIV)
+  G:\KEIL4\KEIL 4 FOR C51\KEIL 开发软件\KEIL 4\C51\LIB\C51S.LIB (?C?SLDIV)
+  G:\KEIL4\KEIL 4 FOR C51\KEIL 开发软件\KEIL 4\C51\LIB\C51S.LIB (?C?SLCMP)
+
+
+LINK MAP OF MODULE:  FANGBO (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0007H     UNIT         _DATA_GROUP_
+            DATA    000FH     0004H     UNIT         ?DT?FANGBO
+                    0013H     000DH                  *** GAP ***
+            BIT     0020H.0   0001H.0   UNIT         _BIT_GROUP_
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     0133H     UNIT         ?C?LIB_CODE
+            CODE    0933H     010FH     UNIT         ?PR?MAIN?FANGBO
+            CODE    0A42H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0ACEH     006DH     UNIT         ?PR?_CONFIGPWM?FANGBO
+            CODE    0B3BH     0044H     UNIT         ?C?LDIV
+            CODE    0B7FH     0015H     UNIT         ?PR?INTERRUPTTIMER0?FANGBO
+            CODE    0B94H     000FH     UNIT         ?PR?DELAY?FANGBO
+            CODE    0BA3H     000DH     UNIT         ?C_INITSEG
+            CODE    0BB0H     0007H     UNIT         ?PR?CLOSEPWM?FANGBO
+
+
+
+OVERLAY MAP OF MODULE:   FANGBO (?C_STARTUP)
+
+
+SEGMENT                               BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT              START    LENGTH     START    LENGTH
+----------------------------------------------------------------------
+?C_C51STARTUP                      -----    -----      -----    -----
+  +--> ?PR?MAIN?FANGBO
+  +--> ?C_INITSEG
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/01/2020  17:32:48  PAGE 2
+
+
+?PR?MAIN?FANGBO                    0020H.0  0001H.0    0008H    0002H
+  +--> ?PR?DELAY?FANGBO
+  +--> ?PR?_CONFIGPWM?FANGBO
+  +--> ?PR?CLOSEPWM?FANGBO
+
+?PR?_CONFIGPWM?FANGBO              -----    -----      000AH    0005H
+
+
+
+SYMBOL TABLE OF MODULE:  FANGBO (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0A42H         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0A45H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0A42H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0A42H         LINE#         133
+  C:0A44H         LINE#         134
+  C:0A45H         LINE#         135
+  C:0A46H         LINE#         136
+  C:0A48H         LINE#         185
+  C:0A4BH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        FANGBO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  B:00A0H.3       PUBLIC        LED1
+  B:00A0H.2       PUBLIC        LED2
+  C:0B7FH         PUBLIC        InterruptTimer0
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/01/2020  17:32:48  PAGE 3
+
+
+  B:00A0H.1       PUBLIC        LED3
+  B:00A0H.0       PUBLIC        LED4
+  D:00A8H         PUBLIC        IE
+  C:0B94H         PUBLIC        delay
+  D:00B8H         PUBLIC        IP
+  B:00B0H.2       PUBLIC        KEY1
+  B:00B0H.3       PUBLIC        KEY2
+  D:000FH         PUBLIC        HighRH
+  B:00B0H.0       PUBLIC        KEY3
+  B:00B0H.1       PUBLIC        KEY4
+  D:0010H         PUBLIC        HighRL
+  C:0933H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:0011H         PUBLIC        LowRH
+  C:0ACEH         PUBLIC        _ConfigPWM
+  D:008AH         PUBLIC        TL0
+  D:0012H         PUBLIC        LowRL
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  C:0BB0H         PUBLIC        ClosePWM
+  B:00A0H.1       PUBLIC        PWMOUT
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0082H         SYMBOL        i
+  B:0020H.0       SYMBOL        backup1
+  B:0020H.1       SYMBOL        backup2
+  B:0020H.2       SYMBOL        backup3
+  B:0020H.3       SYMBOL        backup4
+  B:0020H.4       SYMBOL        keybuf1
+  B:0020H.5       SYMBOL        keybuf2
+  B:0020H.6       SYMBOL        keybuf3
+  B:0020H.7       SYMBOL        keybuf4
+  D:0008H         SYMBOL        a
+  -------         ENDDO         
+  C:0933H         LINE#         42
+  C:0933H         LINE#         44
+  C:0933H         LINE#         48
+  C:0935H         LINE#         50
+  C:0937H         LINE#         52
+  C:0939H         LINE#         54
+  C:093BH         LINE#         56
+  C:093DH         LINE#         58
+  C:093FH         LINE#         60
+  C:0941H         LINE#         62
+  C:0943H         LINE#         64
+  C:0949H         LINE#         68
+  C:094BH         LINE#         72
+  C:094BH         LINE#         74
+  C:094BH         LINE#         78
+  C:094FH         LINE#         80
+  C:0957H         LINE#         82
+  C:0957H         LINE#         84
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/01/2020  17:32:48  PAGE 4
+
+
+  C:095AH         LINE#         86
+  C:0962H         LINE#         88
+  C:0962H         LINE#         90
+  C:0965H         LINE#         92
+  C:0965H         LINE#         94
+  C:0971H         LINE#         96
+  C:0971H         LINE#         98
+  C:0975H         LINE#         100
+  C:0975H         LINE#         102
+  C:0975H         LINE#         104
+  C:0979H         LINE#         106
+  C:0981H         LINE#         108
+  C:0981H         LINE#         110
+  C:0984H         LINE#         112
+  C:098CH         LINE#         114
+  C:098CH         LINE#         116
+  C:098FH         LINE#         118
+  C:098FH         LINE#         120
+  C:099BH         LINE#         122
+  C:099BH         LINE#         124
+  C:099FH         LINE#         126
+  C:099FH         LINE#         128
+  C:099FH         LINE#         130
+  C:09A3H         LINE#         132
+  C:09ABH         LINE#         134
+  C:09ABH         LINE#         136
+  C:09AEH         LINE#         138
+  C:09B6H         LINE#         140
+  C:09B6H         LINE#         142
+  C:09B9H         LINE#         144
+  C:09B9H         LINE#         146
+  C:09C5H         LINE#         148
+  C:09C5H         LINE#         150
+  C:09C9H         LINE#         152
+  C:09C9H         LINE#         154
+  C:09C9H         LINE#         155
+  C:09CDH         LINE#         157
+  C:09D5H         LINE#         159
+  C:09D5H         LINE#         161
+  C:09D8H         LINE#         163
+  C:09E0H         LINE#         165
+  C:09E0H         LINE#         167
+  C:09E3H         LINE#         169
+  C:09E3H         LINE#         171
+  C:09EEH         LINE#         173
+  C:09EEH         LINE#         175
+  C:09F2H         LINE#         177
+  C:09F2H         LINE#         179
+  C:09F2H         LINE#         181
+  C:09FBH         LINE#         183
+  C:0A14H         LINE#         185
+  C:0A17H         LINE#         187
+  C:0A2CH         LINE#         189
+  C:0A2CH         LINE#         191
+  C:0A2EH         LINE#         193
+  C:0A30H         LINE#         195
+  C:0A32H         LINE#         197
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/01/2020  17:32:48  PAGE 5
+
+
+  C:0A34H         LINE#         199
+  C:0A37H         LINE#         203
+  C:0A37H         LINE#         205
+  C:0A39H         LINE#         207
+  C:0A3BH         LINE#         209
+  C:0A3DH         LINE#         211
+  C:0A3FH         LINE#         213
+  C:0A3FH         LINE#         215
+  -------         ENDPROC       MAIN
+  -------         PROC          _CONFIGPWM
+  D:0006H         SYMBOL        fr
+  D:000AH         SYMBOL        dc
+  -------         DO            
+  D:0004H         SYMBOL        high
+  D:0002H         SYMBOL        low
+  D:000BH         SYMBOL        tmp
+  -------         ENDDO         
+  C:0ACEH         LINE#         221
+  C:0AD0H         LINE#         223
+  C:0AD0H         LINE#         231
+  C:0AE8H         LINE#         233
+  C:0B06H         LINE#         235
+  C:0B11H         LINE#         237
+  C:0B19H         LINE#         239
+  C:0B20H         LINE#         241
+  C:0B22H         LINE#         243
+  C:0B24H         LINE#         245
+  C:0B26H         LINE#         247
+  C:0B28H         LINE#         249
+  C:0B2BH         LINE#         251
+  C:0B2EH         LINE#         253
+  C:0B31H         LINE#         255
+  C:0B34H         LINE#         257
+  C:0B36H         LINE#         259
+  C:0B38H         LINE#         261
+  C:0B3AH         LINE#         263
+  -------         ENDPROC       _CONFIGPWM
+  -------         PROC          CLOSEPWM
+  C:0BB0H         LINE#         267
+  C:0BB0H         LINE#         269
+  C:0BB0H         LINE#         271
+  C:0BB2H         LINE#         273
+  C:0BB4H         LINE#         275
+  C:0BB6H         LINE#         277
+  -------         ENDPROC       CLOSEPWM
+  -------         PROC          INTERRUPTTIMER0
+  C:0B7FH         LINE#         281
+  C:0B7FH         LINE#         285
+  C:0B82H         LINE#         287
+  C:0B82H         LINE#         289
+  C:0B85H         LINE#         291
+  C:0B88H         LINE#         293
+  C:0B8AH         LINE#         295
+  C:0B8BH         LINE#         299
+  C:0B8BH         LINE#         301
+  C:0B8EH         LINE#         303
+  C:0B91H         LINE#         305
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/01/2020  17:32:48  PAGE 6
+
+
+  C:0B93H         LINE#         307
+  C:0B93H         LINE#         309
+  -------         ENDPROC       INTERRUPTTIMER0
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0B94H         LINE#         313
+  C:0B94H         LINE#         315
+  C:0B94H         LINE#         317
+  C:0B98H         LINE#         321
+  C:0BA2H         LINE#         323
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        FANGBO
+
+  -------         MODULE        ?C?LMUL
+  C:0800H         PUBLIC        ?C?LMUL
+  -------         ENDMOD        ?C?LMUL
+
+  -------         MODULE        ?C?ULDIV
+  C:088BH         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+  -------         MODULE        ?C?SLDIV
+  C:0B3BH         PUBLIC        ?C?SLDIV
+  -------         ENDMOD        ?C?SLDIV
+
+  -------         MODULE        ?C?SLCMP
+  C:091DH         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 01C5H BYTE (22%) *
+******************************************************************************
+
+Program Size: data=21.0 xdata=0 code=957
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

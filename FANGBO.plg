@@ -1,0 +1,13 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+H:\C51\fangbo\FANGBO.uvproj
+Project File Date:  12/31/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+--- Error: failed to execute 'G:\keil4\keil 4 for C51\keil ¿ª·¢Èí¼þ\keil 4\C51\BIN\A51.EXE'
+Target not created
